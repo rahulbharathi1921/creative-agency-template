@@ -1,0 +1,559 @@
+/* ========================================
+   Responsive Styles & Media Queries
+   ======================================== */
+
+/* ========================================
+   Base Responsive Variables
+   ======================================== */
+
+:root {
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+}
+
+/* ========================================
+   Small Devices (Landscape Phones)
+   ======================================== */
+
+@media (max-width: 639px) {
+    /* Typography */
+    h1, .h1 { font-size: 2rem; }
+    h2, .h2 { font-size: 1.75rem; }
+    h3, .h3 { font-size: 1.5rem; }
+    h4, .h4 { font-size: 1.25rem; }
+    h5, .h5 { font-size: 1.125rem; }
+    h6, .h6 { font-size: 1rem; }
+    
+    p {
+        font-size: 0.9375rem;
+    }
+    
+    /* Spacing */
+    :root {
+        --spacing-section: 60px;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    /* Hero */
+    .hero {
+        min-height: auto;
+        min-height: 100dvh;
+        padding: calc(var(--header-height) + 40px) 0 60px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+        letter-spacing: -1px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+    }
+    
+    /* Cards */
+    .card {
+        padding: var(--spacing-lg);
+    }
+    
+    /* Forms */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-lg);
+    }
+    
+    .btn-lg {
+        padding: var(--spacing-md) var(--spacing-xl);
+    }
+}
+
+/* ========================================
+   Medium Devices (Tablets)
+   ======================================== */
+
+@media (min-width: 640px) and (max-width: 767px) {
+    h1, .h1 { font-size: 2.5rem; }
+    h2, .h2 { font-size: 2rem; }
+    h3, .h3 { font-size: 1.75rem; }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .container {
+        padding: 0 24px;
+    }
+    
+    section {
+        padding: 80px 0;
+    }
+}
+
+/* ========================================
+   Large Devices (Desktops)
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: 0 32px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    /* Footer Grid */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   Extra Large Devices
+   ======================================== */
+
+@media (min-width: 1024px) {
+    /* Two Column Layout */
+    .two-col-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-2xl);
+        align-items: center;
+    }
+    
+    /* Sidebar Layout */
+    .sidebar-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: var(--spacing-xl);
+    }
+}
+
+/* ========================================
+   Container Queries (Modern CSS)
+   ======================================== */
+
+@container (min-width: 400px) {
+    .card-content {
+        display: flex;
+        gap: var(--spacing-md);
+    }
+}
+
+/* ========================================
+   Navigation Responsive
+   ======================================== */
+
+@media (max-width: 767px) {
+    /* Hide Desktop Nav */
+    .nav-desktop {
+        display: none;
+    }
+    
+    /* Mobile Navigation */
+    .nav-mobile {
+        display: block;
+    }
+    
+    .navbar {
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .navbar-scrolled {
+        padding: var(--spacing-xs) 0;
+    }
+    
+    .navbar-brand {
+        font-size: var(--font-size-lg);
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--color-background);
+        padding: calc(var(--header-height) + var(--spacing-xl)) var(--spacing-xl) var(--spacing-xl);
+        transition: right var(--transition-smooth);
+        z-index: var(--z-fixed);
+        overflow-y: auto;
+    }
+    
+    .mobile-menu.active {
+        right: 0;
+    }
+    
+    .mobile-menu-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-base);
+        z-index: calc(var(--z-fixed) - 1);
+    }
+    
+    .mobile-menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .mobile-nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+    
+    .mobile-nav-link {
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-medium);
+        padding: var(--spacing-sm) 0;
+        border-bottom: 1px solid var(--color-border-light);
+    }
+    
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+        cursor: pointer;
+        z-index: var(--z-fixed);
+    }
+    
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--color-text);
+        border-radius: var(--radius-full);
+        transition: all var(--transition-base);
+        transform-origin: center;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+    
+    /* Close Button */
+    .mobile-menu-close {
+        position: absolute;
+        top: var(--spacing-md);
+        right: var(--spacing-md);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--font-size-2xl);
+        color: var(--color-text);
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-mobile,
+    .mobile-menu,
+    .mobile-menu-overlay,
+    .menu-toggle {
+        display: none;
+    }
+    
+    .nav-desktop {
+        display: flex;
+    }
+}
+
+/* ========================================
+   Grid Responsive
+   ======================================== */
+
+@media (max-width: 639px) {
+    .grid-auto {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   Section Responsive
+   ======================================== */
+
+@media (max-width: 767px) {
+    .section {
+        padding: var(--spacing-section) 0;
+    }
+    
+    .section-header {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .section-header br {
+        display: none;
+    }
+}
+
+/* ========================================
+   Cards Responsive
+   ======================================== */
+
+@media (max-width: 639px) {
+    .service-card,
+    .project-card,
+    .testimonial-card {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* ========================================
+   Forms Responsive
+   ======================================== */
+
+@media (max-width: 639px) {
+    .form-input,
+    .form-textarea,
+    .form-select {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+}
+
+/* ========================================
+   Footer Responsive
+   ======================================== */
+
+@media (max-width: 767px) {
+    .footer {
+        padding: var(--spacing-2xl) 0 var(--spacing-lg);
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+    
+    .footer-brand {
+        max-width: 100%;
+    }
+    
+    .footer-title {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .footer-links {
+        align-items: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+}
+
+/* ========================================
+   Hero Responsive
+   ======================================== */
+
+@media (max-width: 767px) {
+    .hero {
+        background: var(--gradient-hero);
+    }
+    
+    .hero-content {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+    
+    .hero-title {
+        letter-spacing: -1px;
+    }
+    
+    .scroll-indicator {
+        bottom: var(--spacing-lg);
+    }
+    
+    .scroll-indicator-line {
+        height: 30px;
+    }
+}
+
+/* ========================================
+   Contact Section Responsive
+   ======================================== */
+
+@media (max-width: 1023px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .contact-info {
+        order: 1;
+    }
+    
+    .contact-form-wrapper {
+        order: 2;
+    }
+}
+
+@media (max-width: 639px) {
+    .contact-content {
+        gap: var(--spacing-lg);
+    }
+}
+
+/* ========================================
+   About Section Responsive
+   ======================================== */
+
+@media (max-width: 1023px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .about-image {
+        order: -1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 639px) {
+    .about-content {
+        gap: var(--spacing-lg);
+    }
+    
+    .about-text {
+        font-size: 1rem;
+    }
+}
+
+/* ========================================
+   Utilities Responsive
+   ======================================== */
+
+@media (max-width: 639px) {
+    .hide-mobile {
+        display: none !important;
+    }
+    
+    .show-mobile {
+        display: block !important;
+    }
+    
+    .text-center-mobile {
+        text-align: center;
+    }
+    
+    .flex-column-mobile {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 640px) {
+    .hide-mobile {
+        display: block !important;
+    }
+    
+    .show-mobile {
+        display: none !important;
+    }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* ========================================
+   Reduced Motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

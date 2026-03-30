@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Settings - DeCoders Creative Digital Agency">
+    <meta name="robots" content="noindex, follow">
+    
+    <title>Settings | DeCoders</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎨%3C/text%3E%3C/svg%3E">
+    
+    <!-- Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="navbar" id="header" role="banner">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-brand logo nav-link">DECODERS</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop" role="navigation" aria-label="Main navigation">
+                <ul class="navbar-nav">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#services" class="nav-link">Services</a></li>
+                    <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li>
+                        <button class="theme-toggle" aria-label="Toggle dark mode">
+                            <span class="theme-toggle-icon">🌙</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+            <button class="mobile-menu-close" aria-label="Close menu">×</button>
+            <ul class="mobile-nav-list">
+                <li><a href="index.html#home" class="mobile-nav-link nav-link">Home</a></li>
+                <li><a href="index.html#about" class="mobile-nav-link nav-link">About</a></li>
+                <li><a href="index.html#services" class="mobile-nav-link nav-link">Services</a></li>
+                <li><a href="index.html#projects" class="mobile-nav-link nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="mobile-nav-link nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-overlay"></div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="settings-page" id="main-content">
+        <div class="container settings-container">
+            <!-- Settings Header -->
+            <div class="settings-header">
+                <h1 class="settings-title">Settings</h1>
+                <p class="settings-subtitle">Manage your preferences and account settings</p>
+            </div>
+            
+            <!-- Profile Section -->
+            <section class="settings-section">
+                <h2 class="settings-section-title">Profile</h2>
+                
+                <div class="profile-header">
+                    <div class="profile-avatar">JD</div>
+                    <div class="profile-info">
+                        <h3>John Doe</h3>
+                        <p>john.doe@example.com</p>
+                    </div>
+                </div>
+                
+                <form class="profile-form" data-form="settings" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="firstName">First Name</label>
+                            <input class="form-input" type="text" id="firstName" name="firstName" value="John">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="lastName">Last Name</label>
+                            <input class="form-input" type="text" id="lastName" name="lastName" value="Doe">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-input" type="email" id="email" name="email" value="john.doe@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="company">Company</label>
+                        <input class="form-input" type="text" id="company" name="company" value="DeCoders Inc.">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </section>
+            
+            <!-- Appearance Section -->
+            <section class="settings-section">
+                <h2 class="settings-section-title">Appearance</h2>
+                
+                <div class="settings-item">
+                    <div class="settings-item-info">
+                        <div class="settings-item-title">Dark Mode</div>
+                        <div class="settings-item-desc">Switch between light and dark themes</div>
+                    </div>
+                    <div class="toggle-switch" data-theme aria-label="Toggle dark mode" role="switch" aria-checked="false" tabindex="0"></div>
+                </div>
+                
+                <div class="settings-item">
+                    <div class="settings-item-info">
+                        <div class="settings-item-title">Reduce Motion</div>
+                        <div class="settings-item-desc">Minimize animations for accessibility</div>
+                    </div>
+                    <div class="toggle-switch" data-reduce-motion aria-label="Toggle reduce motion" role="switch" aria-checked="false" tabindex="0"></div>
+                </div>
+            </section>
+            
+            <!-- Notifications Section -->
+            <section class="settings-section">
+                <h2 class="settings-section-title">Notifications</h2>
+                
+                <div class="settings-item">
+                    <div class="settings-item-info">
+                        <div class="settings-item-title">Email Notifications</div>
+                        <div class="settings-item-desc">Receive updates via email</div>
+                    </div>
+                    <div class="toggle-switch active" data-email-notifications aria-label="Toggle email notifications" role="switch" aria-checked="true" tabindex="0"></div>
+                </div>
+                
+                <div class="settings-item">
+                    <div class="settings-item-info">
+                        <div class="settings-item-title">Push Notifications</div>
+                        <div class="settings-item-desc">Receive browser notifications</div>
+                    </div>
+                    <div class="toggle-switch" data-push-notifications aria-label="Toggle push notifications" role="switch" aria-checked="false" tabindex="0"></div>
+                </div>
+                
+                <div class="settings-item">
+                    <div class="settings-item-info">
+                        <div class="settings-item-title">Newsletter</div>
+                        <div class="settings-item-desc">Subscribe to our monthly newsletter</div>
+                    </div>
+                    <div class="toggle-switch active" data-newsletter aria-label="Toggle newsletter" role="switch" aria-checked="true" tabindex="0"></div>
+                </div>
+            </section>
+            
+            <!-- Privacy Section -->
+            <section class="settings-section">
+                <h2 class="settings-section-title">Privacy</h2>
+                
+                <div class="settings-item">
+                    <div class="settings-item-info">
+                        <div class="settings-item-title">Profile Visibility</div>
+                        <div class="settings-item-desc">Control who can see your profile</div>
+                    </div>
+                    <select class="settings-select" aria-label="Profile visibility">
+                        <option value="public">Public</option>
+                        <option value="private" selected>Private</option>
+                        <option value="friends">Friends Only</option>
+                    </select>
+                </div>
+                
+                <div class="settings-item">
+                    <div class="settings-item-info">
+                        <div class="settings-item-title">Data Collection</div>
+                        <div class="settings-item-desc">Allow anonymous usage data collection</div>
+                    </div>
+                    <div class="toggle-switch active" data-data-collection aria-label="Toggle data collection" role="switch" aria-checked="true" tabindex="0"></div>
+                </div>
+            </section>
+            
+            <!-- Danger Zone -->
+            <section class="settings-section" style="border-color: rgba(239, 68, 68, 0.3);">
+                <h2 class="settings-section-title" style="color: var(--color-error);">Danger Zone</h2>
+                
+                <div class="settings-item" style="border-bottom: none;">
+                    <div class="settings-item-info">
+                        <div class="settings-item-title">Delete Account</div>
+                        <div class="settings-item-desc">Permanently delete your account and all data</div>
+                    </div>
+                    <button class="btn btn-outline" style="border-color: var(--color-error); color: var(--color-error);">Delete Account</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Scripts -->
+    <script src="src/scripts/utils.js" defer></script>
+    <script src="src/scripts/navigation.js" defer></script>
+    <script src="src/scripts/form-handler.js" defer></script>
+    <script>
+        // Initialize theme toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.querySelector('.toggle-switch[data-theme]');
+            const reduceMotionToggle = document.querySelector('[data-reduce-motion]');
+            
+            // Theme toggle
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    themeToggle.classList.toggle('active');
+                    const isDark = themeToggle.classList.contains('active');
+                    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+                    localStorage.setItem('decoders-theme', isDark ? 'dark' : 'light');
+                });
+                
+                // Check saved preference
+                const savedTheme = localStorage.getItem('decoders-theme');
+                if (savedTheme === 'dark') {
+                    themeToggle.classList.add('active');
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            }
+            
+            // Reduce motion toggle
+            if (reduceMotionToggle) {
+                reduceMotionToggle.addEventListener('click', () => {
+                    reduceMotionToggle.classList.toggle('active');
+                    const prefersReducedMotion = reduceMotionToggle.classList.contains('active');
+                    document.documentElement.style.setProperty('--transition-fast', prefersReducedMotion ? '0ms' : '150ms');
+                    document.documentElement.style.setProperty('--transition-base', prefersReducedMotion ? '0ms' : '250ms');
+                    localStorage.setItem('decoders-reduce-motion', prefersReducedMotion);
+                });
+            }
+            
+            // Other toggle switches
+            document.querySelectorAll('.toggle-switch:not([data-theme])').forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    toggle.classList.toggle('active');
+                });
+                
+                // Keyboard support
+                toggle.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggle.click();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+# DeCoders - Git Ignore
+
+# =========================================
+# Dependencies
+# =========================================
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# =========================================
+# Build Output
+# =========================================
+dist/
+build/
+*.min.js
+*.min.css
+
+# =========================================
+# IDE & Editor
+# =========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# =========================================
+# Environment Files
+# =========================================
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# =========================================
+# Logs
+# =========================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================================
+# Testing
+# =========================================
+coverage/
+.nyc_output/
+
+# =========================================
+# Temporary Files
+# =========================================
+*.tmp
+*.temp
+.cache/
+tmp/
+temp/
+
+# =========================================
+# Images & Media (Optional - uncomment to ignore)
+# =========================================
+# src/assets/images/*
+# !src/assets/images/.gitkeep
+
+# =========================================
+# OS Specific
+# =========================================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+.directory
