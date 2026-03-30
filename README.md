@@ -114,13 +114,7 @@ Edit CSS custom properties in `src/styles/_variables.css`:
 ### Dark/Light Mode
 The theme toggle is in the navigation bar. Click to switch between dark (default) and light modes.
 
-## 📞 Contact
 
-**DeCoders Digital Agency**
-
-- **Website**: [decoders.dev](https://decoders.dev)
-- **Email**: hello@decoders.dev
-- **GitHub**: [@decoders](https://github.com/decoders)
 
 ## 📄 License
 
